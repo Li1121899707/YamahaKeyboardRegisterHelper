@@ -230,7 +230,7 @@
                 styleSelectBDisabled:true,
                 styleSelectCDisabled:true,
                 styleSelectDDisabled:true,
-                stylePointDisabled:true
+                stylePointDisabled:true,
             }  
         },
         methods: {
@@ -270,6 +270,24 @@
             changeFade (status) {
                 status ? this.$Message.info('淡入/淡出 : 开') : this.$Message.info('淡入/淡出 : 关');
             },
+        },
+        computed:{
+            styleResult:function () {
+                var temp = {
+                    'acmp':this.acmpSwitch,
+                    'syncStart':this.syncStartSwitch,
+                    'stylePoint':this.stylePoint,
+                    'styleName':this.styleNameSelect,
+                    'styleVolume':this.styleVolume,
+                    'mainType':this.mainRadio,
+                    'fillin':this.fillinSwitch,
+                    'tempo':this.tempo,
+                    'intro':this.introSwitch,
+                    'introType':this.introRadio,
+                    'fade':this.fadeSwitch
+                };
+                return temp;
+            }
         }
     }
 </script>

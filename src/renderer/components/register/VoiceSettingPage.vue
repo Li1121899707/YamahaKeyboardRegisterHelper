@@ -303,7 +303,8 @@
                         value:'Standard',
                         label:"Standard"
                     },
-                ]
+                ],
+                
             }  
         },
         methods: {
@@ -318,6 +319,23 @@
             changeDsp (status) {
                 status ? this.$Message.info('Dsp : 开') : this.$Message.info('Dsp : 关');
                 this.dspSelectDisabled = !status; 
+            },
+        },
+        computed:{
+            voiceResult:function () {
+                var temp = {
+                    'voiceName':this.voiceListSelect,
+                    'voiceVolume':this.voiceVolume,
+                    'sustain':this.sustainSwitch,
+                    'octave':this.octaveSelect,
+                    'touch':this.touchSelect,
+                    'harmony':this.harmonySwitch,
+                    'harmonyType':this.harmonySwitch?this.harmonySelect:null,
+                    'harmonyVolume':this.harmonySwitch?this.harmonyVolume:null,
+                    'dsp':this.dspSwitch,
+                    'dspType':this.dspSwitch?this.dspSelect:null
+                }
+                return temp;
             }
         }
     }

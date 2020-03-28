@@ -3,10 +3,10 @@ import axios from 'axios'
 
 import App from './App'
 import router from './router'
-import store from './store'
 import ViewUI from 'view-design'
 import 'view-design/dist/styles/iview.css'
 import db from './datastore'
+import store from './store'
 
 if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
 Vue.use(ViewUI)
@@ -18,6 +18,6 @@ Vue.prototype.$db = db
 new Vue({
   components: { App },
   router,
-  store,
+  store, // 这样可以全局使用vuex
   template: '<App/>'
 }).$mount('#app')
