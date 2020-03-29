@@ -36,6 +36,7 @@
     </Layout>
 </template>
 <script>
+import {mapActions, mapGetters} from 'vuex'
     export default {
         created: function () {
             this.$router.push({ path: 'register-bank' })
@@ -47,6 +48,10 @@
             }
         },
         methods: {
+            insert(){
+                console.log("插入数据库数据")
+                console.log(this.registerContent)
+            },
             next () {
                 if (this.current == 3) 
                     this.$Message.info("添加注册记忆成功");
@@ -56,16 +61,24 @@
                     this.$refs['target-name'].responseFunction()
                     this.$router.push({ path: 'register-input' })
                 }
-                    
                 else if(this.current == 2){
                     console.log(this.$refs['target-name'].registerContent)
                     this.$refs['target-name'].responseFunction()
                     this.$router.push({ path: 'register-set' })
                 }
+                else if(this.current == 3){
+                    console.log(this.$refs['target-name'].registerContent)
+                    //this.$refs['target-name'].responseFunction()
+                    // 写入数据库 ！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+                    this.insert()
+                    //this.$router.push({ path: 'register-finish' })
+                }
             },
             back(){
                 if (this.current == 0) 
                     this.$Message.info("已经在第一步了！");
+                else if(this.current == 3)
+                    this.$Message.info("已经注册成功，不可回退！");
                 else {
                     this.modal1 = true;
                 }
@@ -83,6 +96,9 @@
             cancel () {
                 this.$Message.info('取消返回操作');
             }
+        },
+        computed:{
+            ...mapGetters(['registerContent'])
         }
     }
 </script>

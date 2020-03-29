@@ -6,6 +6,8 @@ import RegisterHomePage from '@/components/RegisterHomePage'
 import RegisterBankPage from '@/components/register/RegisterBankPage'
 import RegisterInputPage from '@/components/register/RegisterInputPage'
 import RegisterSetPage from '@/components/register/RegisterSetPage'
+import RegisterFinishPage from '@/components/register/RegisterFinishPage'
+import RegisterListPage from '@/components/RegisterListPage'
 
 Vue.use(Router)
 
@@ -41,7 +43,17 @@ export default new Router({
               name: 'register-set',
               component: RegisterSetPage,
             },
+            {
+              path: '/register-finish',
+              name: 'register-finish',
+              component: RegisterFinishPage,
+            },
           ]
+        },
+        {
+          path: '/register-list',
+          name: 'register-list',
+          component: RegisterListPage,
         }
       ]
     },

@@ -52,7 +52,7 @@
                         <Icon type="md-create"></Icon>
                         <span>注册记忆信息录入</span>
                     </MenuItem>
-                    <MenuItem name="registerViewMenu">
+                    <MenuItem name="registerViewMenu" to="/register-list">
                         <Icon type="md-list-box"></Icon>
                         <span>注册记忆信息查看</span>
                     </MenuItem>

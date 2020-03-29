@@ -331,8 +331,11 @@
 			...mapGetters(['keyboardType']) ,// 动态计算属性，相当于this.$store.getters.resturantName
             ...mapGetters(['bankName']),
             registerContent:function () {
+                var bank = this.bankName;
+                var type = this.keyboardType;
                 var result = {
-                    'generatedId':'name|&PSR-S670|&1',
+                    'generatedId': bank +"|&" + type ,
+                    'registerId': [],
                     'voice':{
                         'doubleVoice':this.doubleSwitch,
                         'splitVoice':this.splitSwitch,
@@ -341,8 +344,9 @@
                         'right1':this.$refs.right1Ref.voiceResult,
                         'right2':this.$refs.right2Ref.voiceResult,
                         'left':this.$refs.right3Ref.voiceResult,
-                        'style':this.$refs.styleRef.styleResult
-                    }
+                    },
+                    'useStyle':this.$refs.styleRef.useStyleSwitch,
+                    'style':this.$refs.styleRef.styleResult,
                 }
                 return result;
             }
