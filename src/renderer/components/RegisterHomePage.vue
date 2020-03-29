@@ -44,34 +44,91 @@ import {mapActions, mapGetters} from 'vuex'
         data () {
             return {
                 current: 0,
-                modal1: false
+                modal1: false,
+                ids:[],
+                bankDoc: '',
             }
         },
         methods: {
-            insert(){
-                console.log("插入数据库数据")
-                console.log(this.registerContent)
+            insertRegisterData(){
+                var arr = this.registerContent.registerId
+                for(var i=0; i<arr.length; i++)
+                    this.ids.push(arr[i])
+
+                for(var i=0; i<this.ids.length; i++){
+                    var content = Object.assign({},this.registerContent); // 深拷贝！否则下面的插入异步操作会导致插入的regisgerid永远是最后一位
+                    content.registerId = this.ids[i]
+                    this.$db.registerData.loadDatabase()
+                    this.$db.registerData.insert(content , function (err, newDoc) {   // Callback is optional
+                    });
+                }
+            },
+            handleBankData(){
+                var name = this.registerContent.bankName;
+                var type = this.registerContent.keyboardType;
+                var success = true;
+                this.$db.bankData.loadDatabase()
+                this.$db.bankData.find({'bankName':name, 'keyboardType':type},  (err, docs)=> {
+                    if(docs.length == 0)
+                        success = false
+                    this.bankDoc = docs;
+                    if(!success){
+                        var arr = {
+                            'bankName': name,
+                            'keyboardType': type,
+                            'registerId': this.ids
+                        };
+                        this.$db.bankData.insert(arr , function (err, newDoc) {
+                        });
+                    }
+                    else{
+                        var currIds = this.bankDoc[0].registerId;
+                        for(var i=0; i<this.ids.length; i++){
+                            currIds.push(this.ids[i])
+                        }
+                        this.$db.bankData.remove({ _id: this.bankDoc[0]._id }, {}, function (err, numRemoved) {
+                        });
+                        var arr = {
+                            'bankName': name,
+                            'keyboardType': type,
+                            'registerId': currIds
+                        };
+                        this.$db.bankData.insert(arr , function (err, newDoc) {
+                        });
+                    }
+                });
+                
             },
             next () {
-                if (this.current == 3) 
-                    this.$Message.info("添加注册记忆成功");
-                else 
+                if (this.current < 3) 
                     this.current += 1;
+                else if(this.current == 3){
+                    this.current += 1;
+                    this.$Message.info("添加注册记忆成功");
+                }
+                else
+                    this.$Message.info("添加注册记忆成功");
+
                 if(this.current == 1){
                     this.$refs['target-name'].responseFunction()
                     this.$router.push({ path: 'register-input' })
                 }
                 else if(this.current == 2){
-                    console.log(this.$refs['target-name'].registerContent)
                     this.$refs['target-name'].responseFunction()
                     this.$router.push({ path: 'register-set' })
                 }
                 else if(this.current == 3){
-                    console.log(this.$refs['target-name'].registerContent)
-                    //this.$refs['target-name'].responseFunction()
-                    // 写入数据库 ！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
-                    this.insert()
-                    //this.$router.push({ path: 'register-finish' })
+                    if(this.$refs['target-name'].alreadyRegisterId.length == 0){
+                        this.$Message.info("还未选择注册记忆！");
+                        this.current -= 1;
+                    }
+                    else{
+                        // 写入数据库 registerData
+                        this.insertRegisterData();
+                        // 写入数据库 bankData
+                        this.handleBankData();
+                        this.$router.push({ path: 'register-finish' })
+                    }
                 }
             },
             back(){

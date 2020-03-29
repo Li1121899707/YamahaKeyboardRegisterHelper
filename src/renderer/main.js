@@ -12,7 +12,7 @@ if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
 Vue.use(ViewUI)
 Vue.http = Vue.prototype.$http = axios
 Vue.config.productionTip = false
-Vue.prototype.$db = db
+Vue.prototype.$db = db.db
 
 /* eslint-disable no-new */
 new Vue({

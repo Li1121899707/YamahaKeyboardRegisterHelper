@@ -332,9 +332,11 @@
             ...mapGetters(['bankName']),
             registerContent:function () {
                 var bank = this.bankName;
-                var type = this.keyboardType;
+                var keyboardType = this.keyboardType;
                 var result = {
-                    'generatedId': bank +"|&" + type ,
+                    'generatedId': bank +"|&" + keyboardType ,
+                    'bankName':bank,
+                    'keyboardType':keyboardType,
                     'registerId': [],
                     'voice':{
                         'doubleVoice':this.doubleSwitch,

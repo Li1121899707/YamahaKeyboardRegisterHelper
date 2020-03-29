@@ -85,7 +85,7 @@
                 <Col span="12">
                     <span style="margin:0 10px 0 0">注册记忆序列</span>
                     
-                    <!-- <ButtonGroup size="large" style="zoom:120%">
+                    <!--别删！！！！！！ <ButtonGroup size="large" style="zoom:120%">
                         <Button class="tooltip" v-for="item in buttons" :key="item.id" :disabled="item.disabled" :type="item.type" v-on:click="registerButtonChanges(item.text)">{{item.text}}
                             <span class="tooltiptext">音色：长笛+弦乐<br>节奏：8Beat</span>
                         </Button>
@@ -167,6 +167,9 @@
 <script>
 import {mapActions, mapGetters} from 'vuex'
     export default {
+        created(){
+            this.findFromBankDatabase();
+        },
         data () {
             return {
                 // 按钮
@@ -232,10 +235,30 @@ import {mapActions, mapGetters} from 'vuex'
                 alreadyRegisterId:[],
                 registerFirstModel:false,
                 registerOtherModel:false,
-                registerButtonDisabled:false
+                registerButtonDisabled:false,
+                bankDocs:''
             }  
         },
         methods: {
+            findFromBankDatabase(){
+                this.$db.bankData.loadDatabase();
+                // 需要改成按条件查询！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+                this.$db.bankData.find({},  (err, docs)=> {
+                    this.bankDocs = docs;
+                    console.log(this.bankDocs)
+                    if(this.bankDocs.length != 0){
+                        var buttonArr = this.bankDocs[0].registerId;
+                        console.log(buttonArr)
+                        if(buttonArr.length != 0){
+                            for(var i = 0; i<buttonArr; i++){
+                                this.buttons[buttonArr[i]-1].disabled = true;
+                            }
+                        }
+                    }
+                    this.registerButtonDisabledChanges();
+                });
+                
+            },
             // 注册记忆更换响应
             registerButtonChanges(id){
                 this.$Message.info('您选择了注册 ' + id);
@@ -261,7 +284,6 @@ import {mapActions, mapGetters} from 'vuex'
                 if(search == false){
                     this.registerButtonDisabled = true;
                 }
-                    
             },
             dataCollation(data){
                 var arr = [

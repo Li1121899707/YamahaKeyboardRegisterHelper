@@ -19,6 +19,5 @@ import {mapActions, mapGetters} from 'vuex'
 		methods: {
             
         }
-
     }
 </script>
