@@ -50,6 +50,7 @@ import {mapActions, mapGetters} from 'vuex'
             }
         },
         methods: {
+            // 存储注册记忆数据
             insertRegisterData(){
                 var arr = this.registerContent.registerId
                 for(var i=0; i<arr.length; i++)
@@ -63,6 +64,7 @@ import {mapActions, mapGetters} from 'vuex'
                     });
                 }
             },
+            // 处理注册记忆库表数据（如果注册记忆库已经有相同的库和琴型号，则执行更新（删除+添加）操作，更新注册记忆序列号；否则执行添加）
             handleBankData(){
                 var name = this.registerContent.bankName;
                 var type = this.registerContent.keyboardType;
@@ -99,6 +101,7 @@ import {mapActions, mapGetters} from 'vuex'
                 });
                 
             },
+            // 下一步按钮响应函数
             next () {
                 if (this.current < 3) 
                     this.current += 1;
@@ -131,6 +134,7 @@ import {mapActions, mapGetters} from 'vuex'
                     }
                 }
             },
+            // 上一步按钮响应函数
             back(){
                 if (this.current == 0) 
                     this.$Message.info("已经在第一步了！");
@@ -140,6 +144,7 @@ import {mapActions, mapGetters} from 'vuex'
                     this.modal1 = true;
                 }
             },
+            // 模态对话框，返回上一步提示信息：确定
             ok () {
                 this.$Message.info('返回上一步');
                 this.current -= 1;
@@ -150,6 +155,7 @@ import {mapActions, mapGetters} from 'vuex'
                 else if(this.current == 2)
                     this.$router.push({ path: 'register-set' })
             },
+            // 模态对话框，返回上一步提示信息：取消返
             cancel () {
                 this.$Message.info('取消返回操作');
             }

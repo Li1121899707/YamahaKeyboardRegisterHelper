@@ -248,9 +248,10 @@ import {mapActions, mapGetters} from 'vuex'
                     console.log(this.bankDocs)
                     if(this.bankDocs.length != 0){
                         var buttonArr = this.bankDocs[0].registerId;
+                        console.log("buttonArr")
                         console.log(buttonArr)
                         if(buttonArr.length != 0){
-                            for(var i = 0; i<buttonArr; i++){
+                            for(var i = 0; i<buttonArr.length; i++){
                                 this.buttons[buttonArr[i]-1].disabled = true;
                             }
                         }
