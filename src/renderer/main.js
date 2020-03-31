@@ -13,6 +13,7 @@ Vue.use(ViewUI)
 Vue.http = Vue.prototype.$http = axios
 Vue.config.productionTip = false
 Vue.prototype.$db = db.db
+Vue.prototype.$axios = axios
 
 /* eslint-disable no-new */
 new Vue({

@@ -27,8 +27,10 @@
                     <!-- 音色名称 结束 -->
                     <!-- 音色名称 下拉框 开始 -->
                     <Col span="15">
-                        <Select v-model="voiceListSelect" style="width:200px">
-                            <Option v-for="item in voiceList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+                        <Select v-model="voiceListSelect" style="width:200px" filterable>
+                            <OptionGroup v-for="item in voiceList" :label="item.group">
+                                <Option v-for="element in item.values" :value="element.name" :key="element.index">{{ element.name }}</Option>
+                            </OptionGroup>
                         </Select>
                     </Col>
                     <!-- 音色名称 下拉框 结束 -->
@@ -167,7 +169,11 @@
     </div>
 </template>
 <script>
+    import {mapActions, mapGetters} from 'vuex' 
     export default {
+        created(){
+            this.loadVoiceList()
+        },
         // 被绑定的变量
         data () {
             return {
@@ -186,20 +192,7 @@
                 harmonySelect: 'Standard Duet',
                 dspSwitch:false,
                 dspSelect: 'Standard',
-                voiceList: [
-                    {
-                        value: 'New York',
-                        label: 'New York'
-                    },
-                    {
-                        value: 'London',
-                        label: 'London'
-                    },
-                    {
-                        value: 'Sydney',
-                        label: 'Sydney'
-                    }
-                ],
+                voiceList: [],
                 octaveList:[
                     {
                         value:0,
@@ -308,6 +301,26 @@
             }  
         },
         methods: {
+            loadVoiceList(){
+                if(this.keyboardType === 'PSR-S670'){
+                    // release 版本
+                    if (process.env.NODE_ENV !== 'development'){
+                        this.$axios.get(__static+'/psr-s670-voice.json').then((res) => {
+                            //用axios的方法引入地址
+                            this.voiceList=res.data;
+                            //赋值
+                        })
+                    }
+                    // debug 版本
+                    else{
+                        this.$axios.get('../../../static/psr-s670-voice.json').then((res) => {
+                            //用axios的方法引入地址
+                            this.voiceList=res.data;
+                            //赋值
+                        })
+                    }
+                }
+            },
             changeSustain (status) {
                 status ? this.$Message.info('延音 : 开') : this.$Message.info('延音 : 关');
             },
@@ -336,7 +349,8 @@
                     'dspType':this.dspSwitch?this.dspSelect:null
                 }
                 return temp;
-            }
+            },
+            ...mapGetters(['keyboardType'])
         }
     }
 </script>

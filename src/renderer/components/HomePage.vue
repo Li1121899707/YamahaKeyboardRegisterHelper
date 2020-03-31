@@ -43,16 +43,16 @@
                 <!-- 侧边栏 MENU 上方的空白 -->
                 <div class="blank" v-if="isShow">YAMAHA<br>注册记忆助手</div>
                 <div class="blank" v-if="!isShow">注册<br>记忆</div>
-                <Menu active-name="hello" theme="dark" width="auto" :class="menuitemClasses">
-                    <MenuItem name="hello" to="/hello">
+                <Menu :active-name="activeName" theme="dark" width="auto" :class="menuitemClasses" @on-select="selectMenu">
+                    <MenuItem name="hello">
                         <Icon type="md-create"></Icon>
                         <span>使用手册</span>
                     </MenuItem>
-                    <MenuItem name="registerInputMenu" to="/register-home">
+                    <MenuItem name="registerInputMenu">
                         <Icon type="md-create"></Icon>
                         <span>注册记忆信息录入</span>
                     </MenuItem>
-                    <MenuItem name="registerViewMenu" to="/register-list">
+                    <MenuItem name="registerListMenu">
                         <Icon type="md-list-box"></Icon>
                         <span>注册记忆信息查看</span>
                     </MenuItem>
@@ -68,11 +68,37 @@
 <script>
 import RegisterInputPage from './register/RegisterInputPage'
     export default {
+        created(){
+            this.$router.push({ path: 'hello' })
+        },
         data () {
             return {
+                activeName:'hello',
                 isShow:true,
                 isCollapsed: false
             };
+        },
+        methods:{
+            selectMenu(event){
+                if(event === this.activeName)
+                    return
+                else{
+                    switch (event) {
+                        case 'hello':
+                            this.$router.push({ path: 'hello' })
+                            break;
+                        case 'registerInputMenu':
+                            this.$router.push({ path: 'register-home' })
+                            break;
+                        case 'registerListMenu':
+                            this.$router.push({ path: 'register-list' })
+                            break;
+                        default:
+                            break;
+                    }
+                    this.activeName = event;
+                }
+            }
         },
         components: { RegisterInputPage },
         computed: {

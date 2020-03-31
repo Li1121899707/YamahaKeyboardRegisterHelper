@@ -80,8 +80,10 @@
                     <span>节奏名称</span>
                 </Col>
                 <Col span="15">
-                    <Select v-model="styleNameSelect" style="width:200px" :disabled="styleNameSelectDisabled">
-                        <Option v-for="item in styleList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+                    <Select v-model="styleNameSelect" style="width:200px" :disabled="styleNameSelectDisabled" filterable>
+                        <OptionGroup v-for="item in styleList" :label="item.group">
+                            <Option v-for="element in item.values" :value="element.name" :key="element.index">{{ element.name }}</Option>
+                        </OptionGroup>
                     </Select>
                 </Col>
             </Card>
@@ -188,7 +190,11 @@
 
 </template>
 <script>
+    import {mapActions, mapGetters} from 'vuex' 
     export default {
+        created(){
+            this.loadStyleList()
+        },
         data () {
             return {
                 useStyleSwitch: false,
@@ -206,16 +212,6 @@
                 tempo: 120,
                 stylePoint: 56,
                 styleList:[],
-                cityList: [
-                    {
-                        value: 'New York',
-                        label: 'New York'
-                    },
-                    {
-                        value: 'London',
-                        label: 'London'
-                    }
-                ],
                 
                 acmpSwitchDisabled: true,
                 syncStartSwitchDisabled:true,
@@ -234,6 +230,26 @@
             }  
         },
         methods: {
+            loadStyleList(){
+                if(this.keyboardType === 'PSR-S670'){
+                    // release 版本
+                    if (process.env.NODE_ENV !== 'development'){
+                        this.$axios.get(__static+'/psr-s670-style.json').then((res) => {
+                            //用axios的方法引入地址
+                            this.styleList=res.data;
+                            //赋值
+                        })
+                    }
+                    // debug 版本
+                    else{
+                        this.$axios.get('../../../static/psr-s670-style.json').then((res) => {
+                            //用axios的方法引入地址
+                            this.styleList=res.data;
+                            //赋值
+                        })
+                    }
+                }
+            },
             changeUseStyle (status) {
                 status ? this.$Message.info('节奏 : 开') : this.$Message.info('节奏 : 关');
                 this.acmpSwitchDisabled=!status;
@@ -287,7 +303,8 @@
                     'fade':this.fadeSwitch
                 };
                 return temp;
-            }
+            },
+            ...mapGetters(['keyboardType'])
         }
     }
 </script>

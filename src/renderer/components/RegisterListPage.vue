@@ -119,7 +119,8 @@
                 currKeyboardType:'',
                 voiceResult:'',
                 styleResult:'',
-                otherResult:'空'
+                otherResult:'空',
+                resu:''
             }
         },
         methods: {
@@ -261,9 +262,6 @@
                 });
                 this.selectOneFromRegisterDatabase();
             },
-        },
-        computed:{
-            
         }
     }
 </script>

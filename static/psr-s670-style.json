@@ -1,0 +1,720 @@
+[{
+    "group": "Pop & Rock",
+    "values": [{
+        "name": "HardRock"
+      },
+      {
+        "name": "PowerRock"
+      },
+      {
+        "name": "AcousticRock"
+      },
+      {
+        "name": "BritRockPop"
+      },
+      {
+        "name": "IndieRock"
+      },
+      {
+        "name": "Live8Beat"
+      },
+      {
+        "name": "Cool8Beat"
+      },
+      {
+        "name": "VintageGtrPop"
+      },
+      {
+        "name": "60sVintageRock"
+      },
+      {
+        "name": "90sRockBallad"
+      },
+      {
+        "name": "FunkPopRock"
+      },
+      {
+        "name": "BritPopSwing"
+      },
+      {
+        "name": "60sGuitarPop"
+      },
+      {
+        "name": "60sPopRock"
+      },
+      {
+        "name": "70s8Beat"
+      },
+      {
+        "name": "90sGuitarPop"
+      },
+      {
+        "name": "00sBoyband"
+      },
+      {
+        "name": "Unplugged"
+      },
+      {
+        "name": "ChartGuitarPop"
+      },
+      {
+        "name": "BubblegumPop"
+      },
+      {
+        "name": "RockShuffle"
+      },
+      {
+        "name": "JazzPop"
+      },
+      {
+        "name": "KoolShuffle"
+      }
+    ]
+  },
+
+  {
+    "group": "Ballad",
+    "values": [{
+        "name": "ModernPopBld"
+      },
+      {
+        "name": "SoulR&B"
+      },
+      {
+        "name": "PopGtrBallad"
+      },
+      {
+        "name": "ChilloutLounge"
+      },
+      {
+        "name": "Chillout"
+      },
+      {
+        "name": "70sGlamPiano"
+      },
+      {
+        "name": "80sEPBallad"
+      },
+      {
+        "name": "90sCoolBallad"
+      },
+      {
+        "name": "8BeatBallad"
+      },
+      {
+        "name": "16BeatBallad"
+      },
+      {
+        "name": "EasyBallad"
+      },
+      {
+        "name": "EPBallad"
+      },
+      {
+        "name": "PowerBallad"
+      },
+      {
+        "name": "6-8SlowRock"
+      },
+      {
+        "name": "6-8Modern"
+      },
+      {
+        "name": "OrganBallad"
+      },
+      {
+        "name": "PianoBallad"
+      },
+      {
+        "name": "NewR&BBallad"
+      },
+      {
+        "name": "GuitarSerenade"
+      }
+    ]
+  },
+
+  {
+    "group": "Dance & R&B",
+    "values": [{
+        "name": "ClubDJHouse"
+      },
+      {
+        "name": "MiamiHouse"
+      },
+      {
+        "name": "ElectricHouse"
+      },
+      {
+        "name": "GangsterHouse"
+      },
+      {
+        "name": "GrimeHouse"
+      },
+      {
+        "name": "PianoHouse"
+      },
+      {
+        "name": "ElectroStep"
+      },
+      {
+        "name": "EuroDance"
+      },
+      {
+        "name": "ProgressiveHouse"
+      },
+      {
+        "name": "FrenchClubHouse"
+      },
+      {
+        "name": "TripHop"
+      },
+      {
+        "name": "ElecCity"
+      },
+      {
+        "name": "HardStep"
+      },
+      {
+        "name": "NuGrep"
+      },
+      {
+        "name": "R&BElectro"
+      },
+      {
+        "name": "Dubstep"
+      },
+      {
+        "name": "Electronica"
+      },
+      {
+        "name": "FunkyHouse"
+      },
+      {
+        "name": "ClubBeat"
+      },
+      {
+        "name": "RetroClub"
+      },
+      {
+        "name": "ModChartPop"
+      },
+      {
+        "name": "AgagBeat"
+      },
+      {
+        "name": "ClubDance"
+      },
+      {
+        "name": "WCoastDance"
+      },
+      {
+        "name": "DreamDance"
+      },
+      {
+        "name": "70sDisco1"
+      },
+      {
+        "name": "70sDisco2"
+      },
+      {
+        "name": "DiscoPhilly"
+      },
+      {
+        "name": "80sDisco"
+      },
+      {
+        "name": "DiscoHouse"
+      },
+      {
+        "name": "USChartHit"
+      },
+      {
+        "name": "MellowHipHop"
+      },
+      {
+        "name": "ClassicHipHop"
+      },
+      {
+        "name": "NewHipHop"
+      },
+      {
+        "name": "Ibiza2002"
+      },
+      {
+        "name": "LatinDJs"
+      },
+      {
+        "name": "FrenchHouse"
+      },
+      {
+        "name": "House"
+      },
+      {
+        "name": "HipHopGroove"
+      },
+      {
+        "name": "ChartR&B"
+      },
+      {
+        "name": "ModernShuffle"
+      },
+      {
+        "name": "BluesRock"
+      },
+      {
+        "name": "SoulBrothers"
+      },
+      {
+        "name": "FranklySoul"
+      },
+      {
+        "name": "6-8Soul"
+      },
+      {
+        "name": "Rock&Roll"
+      },
+      {
+        "name": "OldiesR&R"
+      },
+      {
+        "name": "Soul"
+      },
+      {
+        "name": "DetroitPop"
+      },
+      {
+        "name": "GospelSisters"
+      },
+      {
+        "name": "WorshipMed"
+      },
+      {
+        "name": "ComboBoogie"
+      },
+      {
+        "name": "60sRock&Roll"
+      },
+      {
+        "name": "Twist"
+      }
+    ]
+  },
+
+  {
+    "group": "Swing & Jazz",
+    "values": [{
+        "name": "ModBigBandShfl"
+      },
+      {
+        "name": "OrchBigBand"
+      },
+      {
+        "name": "OrchestraSwing1"
+      },
+      {
+        "name": "OrchestraSwing2"
+      },
+      {
+        "name": "BigBandFast"
+      },
+      {
+        "name": "AcousticJazz"
+      },
+      {
+        "name": "JazzWaltzFast"
+      },
+      {
+        "name": "MidnightSwing"
+      },
+      {
+        "name": "Five-Four"
+      },
+      {
+        "name": "OrganGroove"
+      },
+      {
+        "name": "JumpJive"
+      },
+      {
+        "name": "Ragtime"
+      },
+      {
+        "name": "Dixieland"
+      },
+      {
+        "name": "Charleston"
+      },
+      {
+        "name": "BigBandShuffle"
+      }
+    ]
+  },
+
+  {
+    "group": "Entertainment",
+    "values": [{
+        "name": "70sTVTheme"
+      },
+      {
+        "name": "WildWest"
+      },
+      {
+        "name": "BaroqueAir"
+      },
+      {
+        "name": "Moonlight6-8"
+      },
+      {
+        "name": "OrchestralMarch"
+      },
+      {
+        "name": "SaturdayNight"
+      },
+      {
+        "name": "ClassicPianoBld"
+      },
+      {
+        "name": "ChristmasSwing"
+      },
+      {
+        "name": "ChristmasWaltz"
+      },
+      {
+        "name": "Showtune"
+      },
+      {
+        "name": "GermanRock"
+      },
+      {
+        "name": "DiscoFox"
+      },
+      {
+        "name": "AlpBallad"
+      },
+      {
+        "name": "ScandShuffle"
+      },
+      {
+        "name": "ScandSlowRock"
+      },
+      {
+        "name": "SchlagerPolka"
+      },
+      {
+        "name": "SchlagerPop"
+      },
+      {
+        "name": "SchlagerBeat"
+      },
+      {
+        "name": "70sFrenchHit"
+      },
+      {
+        "name": "PubPiano"
+      },
+      {
+        "name": "PolkaPop"
+      },
+      {
+        "name": "Tijuana"
+      },
+      {
+        "name": "8BeatAdria"
+      },
+      {
+        "name": "DiscoHands"
+      },
+      {
+        "name": "VienneseWaltz"
+      },
+      {
+        "name": "EnglishWaltz"
+      },
+      {
+        "name": "Slowfox"
+      },
+      {
+        "name": "Foxtrot"
+      },
+      {
+        "name": "Quickstep"
+      },
+      {
+        "name": "Tango"
+      },
+      {
+        "name": "Pasodoble"
+      },
+      {
+        "name": "BallroomSamba"
+      },
+      {
+        "name": "ChaChaCha"
+      },
+      {
+        "name": "Rumba"
+      },
+      {
+        "name": "Jive"
+      },
+      {
+        "name": "Swingfox"
+      },
+      {
+        "name": "OrganSwing"
+      },
+      {
+        "name": "OrganSamba"
+      },
+      {
+        "name": "OrganQuickstep"
+      },
+      {
+        "name": "9-8Waltz"
+      }
+    ]
+  },
+
+  {
+    "group": "World",
+    "values": [{
+        "name": "Samba"
+      },
+      {
+        "name": "SambaMPB"
+      },
+      {
+        "name": "Chorinho"
+      },
+      {
+        "name": "Choro"
+      },
+      {
+        "name": "Pagode"
+      },
+      {
+        "name": "SertanejoUniv1"
+      },
+      {
+        "name": "SertanejoUniv2"
+      },
+      {
+        "name": "Axe"
+      },
+      {
+        "name": "Frevo"
+      },
+      {
+        "name": "PartidoAlto"
+      },
+      {
+        "name": "Forro1"
+      },
+      {
+        "name": "Forro2"
+      },
+      {
+        "name": "Xote"
+      },
+      {
+        "name": "Baiao"
+      },
+      {
+        "name": "Vanera"
+      },
+      {
+        "name": "LatinCalypso"
+      },
+      {
+        "name": "Joropo"
+      },
+      {
+        "name": "Parranda"
+      },
+      {
+        "name": "Reggaeton"
+      },
+      {
+        "name": "ArrochaNordeste"
+      },
+      {
+        "name": "LatinSamba"
+      },
+      {
+        "name": "BossaNova"
+      },
+      {
+        "name": "FastBossa"
+      },
+      {
+        "name": "Guajira"
+      },
+      {
+        "name": "Bomba"
+      },
+      {
+        "name": "Salsa"
+      },
+      {
+        "name": "CubanSon"
+      },
+      {
+        "name": "Merengue"
+      },
+      {
+        "name": "Bachata"
+      },
+      {
+        "name": "Cumbia"
+      },
+      {
+        "name": "RumbaFlamenco"
+      },
+      {
+        "name": "Danzon"
+      },
+      {
+        "name": "Calypso"
+      },
+      {
+        "name": "BoleroLento"
+      },
+      {
+        "name": "PopBossa"
+      },
+      {
+        "name": "HappyReggae"
+      },
+      {
+        "name": "LatinDisco"
+      },
+      {
+        "name": "Beguine"
+      },
+      {
+        "name": "RumbaIsland"
+      },
+      {
+        "name": "70sChartCntry"
+      },
+      {
+        "name": "CountryHits"
+      },
+      {
+        "name": "Bluegrass"
+      },
+      {
+        "name": "Hoedown"
+      },
+      {
+        "name": "NewCountry"
+      },
+      {
+        "name": "CountryShuffle"
+      },
+      {
+        "name": "CountryBallad"
+      },
+      {
+        "name": "CountryWaltz"
+      },
+      {
+        "name": "Country2-4"
+      },
+      {
+        "name": "CountryPop"
+      },
+      {
+        "name": "FolkPop"
+      },
+      {
+        "name": "SpanishPaso"
+      },
+      {
+        "name": "PopFlamenco"
+      },
+      {
+        "name": "FrenchMusette"
+      },
+      {
+        "name": "IrishDance"
+      },
+      {
+        "name": "Sirtaki"
+      },
+      {
+        "name": "GermanWaltz"
+      },
+      {
+        "name": "OrientalPop"
+      },
+      {
+        "name": "ArabicEuro"
+      },
+      {
+        "name": "Saeidy"
+      },
+      {
+        "name": "Laff"
+      },
+      {
+        "name": "WehdaSaghira"
+      },
+      {
+        "name": "Duranguense"
+      },
+      {
+        "name": "ModernDangdut"
+      },
+      {
+        "name": "Keroncong"
+      },
+      {
+        "name": "Bhajan"
+      },
+      {
+        "name": "Bhangra"
+      },
+      {
+        "name": "Xi Qing Luo Gu"
+      },
+      {
+        "name": "Jing Ju Jie Zou"
+      },
+      {
+        "name": "Grupera"
+      },
+      {
+        "name": "OberPolka"
+      },
+      {
+        "name": "OberWalzer"
+      },
+      {
+        "name": "MariachiWaltz"
+      },
+      {
+        "name": "Reel"
+      },
+      {
+        "name": "Jig"
+      },
+      {
+        "name": "Tarantella"
+      },
+      {
+        "name": "USMarch"
+      },
+      {
+        "name": "6-8March"
+      },
+      {
+        "name": "GermanMarch"
+      },
+      {
+        "name": "Norteno"
+      }
+    ]
+  }
+]
